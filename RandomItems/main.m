@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
         NSMutableArray *items = [[NSMutableArray alloc] init];
         
         // add random items to array
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
             BNRItem *item = [BNRItem randomItem];
             [items addObject:item];
         }
