@@ -10,4 +10,12 @@
 
 @implementation BNRContainer
 
+
+- (void)addObject:(BNRItem *)item {
+    [_items addObject:item];
+}
+
+- (NSString *)description {
+    return @"this is my bnr container description string";
+}
 @end

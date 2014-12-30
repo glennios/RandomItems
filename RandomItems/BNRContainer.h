@@ -13,7 +13,11 @@
 // Inherited from BNRItem
 //    NSString    *_itemName;
 //    int          _valueInDollars;
+    NSMutableArray *_items;
 }
 
+- (instancetype)initContainer:(NSString *)itemName;
+
+- (void)addObject:(BNRItem *)item;
 
 @end
