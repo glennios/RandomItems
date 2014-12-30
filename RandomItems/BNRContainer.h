@@ -9,5 +9,11 @@
 #import "BNRItem.h"
 
 @interface BNRContainer : BNRItem
+{
+// Inherited from BNRItem
+//    NSString    *_itemName;
+//    int          _valueInDollars;
+}
+
 
 @end
