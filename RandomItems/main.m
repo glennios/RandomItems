@@ -25,6 +25,10 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", item);
         }
         
+        BNRItem *itemNameSerial = [[BNRItem alloc] initWithItemName:@"Glenn" serialNumber:@"R2D2"];
+        itemNameSerial.valueInDollars = 100000000; // at least 9 figs
+        NSLog(@"%@", itemNameSerial);
+        
         // destroy array
         items = nil;
     }
