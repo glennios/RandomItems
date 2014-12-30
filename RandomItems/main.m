@@ -31,6 +31,12 @@ int main(int argc, const char * argv[]) {
         
         // destroy array
         items = nil;
+
+        BNRContainer *container = [[BNRContainer alloc] init];
+        for (BNRItem *item in items) {
+            [container addObject:item];
+        }
+        NSLog(@"%@", container);
     }
     return 0;
 }
