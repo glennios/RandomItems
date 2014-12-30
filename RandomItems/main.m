@@ -20,6 +20,9 @@ int main(int argc, const char * argv[]) {
             [items addObject:item];
         }
         
+        id lastObj = [items lastObject];
+        [lastObj count]; // last item is an obj instance (not a list!) so it won't understand count
+        
         // log random items
         for (BNRItem *item in items) {
             NSLog(@"%@", item);
