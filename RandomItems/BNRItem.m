@@ -18,8 +18,8 @@
 
     int      rndValue = arc4random() % 100;
     NSString *rndName = [NSString stringWithFormat:@"%@ %@",
-                            [rndAjctList objectAtIndex:ajctIndex],
-                            [rndNounList objectAtIndex:nounIndex]
+                            rndAjctList[ajctIndex],
+                            rndNounList[nounIndex]
                         ];
     NSString *rndSerial = [NSString stringWithFormat:@"%c%c%c%c%c",
                                 '0' + arc4random() % 10,
