@@ -20,14 +20,20 @@ int main(int argc, const char * argv[]) {
             BNRItem *item = [BNRItem randomItem];
             [items addObject:item];
         }
-        // log random items
-        for (BNRItem *item in items) { NSLog(@"%@", item); }
         
-        // fill container with items
-        BNRContainer *capsule = [[BNRContainer alloc] initContainer:@"My Time Capsule"];
-        for (BNRItem *item in items) [capsule addObject:item];
+        // fill outerBag
+        BNRContainer *outerBag = [[BNRContainer alloc] initContainer:@"Outer bag"];
+        for (BNRItem *item in items) [outerBag addObject:item];
+        // fill innerBag
+        BNRContainer *innerBag = [[BNRContainer alloc] initContainer:@"Inner bag"];
+        for (int i = 0; i < 4; i++) {
+            [innerBag addObject:[BNRItem randomItem]];
+        }
+        // put innerBag in outerBag
+        [outerBag addObject:innerBag];
+        
 
-        NSLog(@"%@", capsule);
+        NSLog(@"%@", outerBag);
         
         // destroy array
         items = nil;

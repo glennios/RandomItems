@@ -11,7 +11,7 @@
 @implementation BNRContainer
 
 - (instancetype)initContainer:(NSString *)itemName {
-    self = [self init];
+    self = [super init];
     if (!self) return nil;
     _itemName = itemName;
     _items    = [[NSMutableArray alloc] init];
@@ -23,7 +23,7 @@
 }
 
 - (NSString *)description {
-    NSString *template = @"Container name: %@, worth: $%d, items: %@";
+    NSString *template = @"*Container name: %@, worth: $%d, items: %@";
     return [NSString stringWithFormat:template, _itemName, self.valueInDollars, self.itemName];
 }
 
@@ -32,7 +32,6 @@
     for(BNRItem *item in _items) {
         names = names ? [NSString stringWithFormat:@"%@, %@", names, item.itemName]
                       : item.itemName;
-        names = [NSString stringWithFormat:@"%@($%d)", names, item.valueInDollars];
     }
     return names;
 }

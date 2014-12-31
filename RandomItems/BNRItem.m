@@ -46,6 +46,7 @@
     _valueInDollars = value;
     _serialNumber   = serial;
 
+    NSLog(@"%@", self);
     return self;
 }
 
