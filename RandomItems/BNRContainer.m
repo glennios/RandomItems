@@ -10,12 +10,38 @@
 
 @implementation BNRContainer
 
+- (instancetype)initContainer:(NSString *)itemName {
+    self = [self init];
+    if (!self) return nil;
+    _itemName = itemName;
+    _items    = [[NSMutableArray alloc] init];
+    return self;
+}
 
 - (void)addObject:(BNRItem *)item {
     [_items addObject:item];
 }
 
 - (NSString *)description {
-    return @"this is my bnr container description string";
+    NSString *template = @"Container name: %@, worth: $%d, items: %@";
+    return [NSString stringWithFormat:template, _itemName, self.valueInDollars, self.itemName];
+}
+
+- (NSString *)itemName {
+    NSString *names = nil;
+    for(BNRItem *item in _items) {
+        names = names ? [NSString stringWithFormat:@"%@, %@", names, item.itemName]
+                      : item.itemName;
+        names = [NSString stringWithFormat:@"%@($%d)", names, item.valueInDollars];
+    }
+    return names;
+}
+
+- (int)valueInDollars {
+    int sum = 0;
+    for(BNRItem *item in _items) {
+        sum += item.valueInDollars;
+    }
+    return sum;
 }
 @end

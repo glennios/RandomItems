@@ -20,24 +20,17 @@ int main(int argc, const char * argv[]) {
             BNRItem *item = [BNRItem randomItem];
             [items addObject:item];
         }
-        
         // log random items
-        for (BNRItem *item in items) {
-            NSLog(@"%@", item);
-        }
+        for (BNRItem *item in items) { NSLog(@"%@", item); }
         
-        BNRItem *itemNameSerial = [[BNRItem alloc] initWithItemName:@"Glenn" serialNumber:@"R2D2"];
-        itemNameSerial.valueInDollars = 100000000; // at least 9 figs
-        NSLog(@"%@", itemNameSerial);
+        // fill container with items
+        BNRContainer *capsule = [[BNRContainer alloc] initContainer:@"My Time Capsule"];
+        for (BNRItem *item in items) [capsule addObject:item];
+
+        NSLog(@"%@", capsule);
         
         // destroy array
         items = nil;
-
-        BNRContainer *container = [[BNRContainer alloc] init];
-        for (BNRItem *item in items) {
-            [container addObject:item];
-        }
-        NSLog(@"%@", container);
     }
     return 0;
 }
