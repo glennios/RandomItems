@@ -107,4 +107,8 @@
     
     return desc;
 }
+
+-(void)dealloc {
+    NSLog(@"Deallocating %@", self);
+}
 @end
